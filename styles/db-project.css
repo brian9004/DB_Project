@@ -45,3 +45,27 @@ footer {
   object-fit: cover;
   object-position: 100% 50%;
 }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* Adjust the minmax values as needed */
+  grid-gap: 20px;
+  padding: 20px;
+  background-color: #f4f4f4; /* Or any color you prefer */
+}
+.grid-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+.grid-item img {
+  width: 100%; /* Makes the image responsive */
+  height: auto; /* Maintain aspect ratio */
+}
+.title {
+  margin-top: 10px;
+  font-weight: bold;
+}
+.author {
+  color: #555;
+}

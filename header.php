@@ -10,30 +10,48 @@
   /* Inline CSS for simplicity - consider using an external stylesheet in production */
   .header {
     background-color: #094067;
-    color: white;
+    color: white; /* for the text*/
     padding: 10px;
     display: flex;
     align-items: center;
   }
   .header img {
-    background-color: #094067;
+
     height: 40px; /* Your logo height */
   }
+
+  .logo img{ /* this is just for logo */
+    height: 50px;
+    width: 60px; 
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+  }
+
   .search-container {
     display: flex;
     flex-grow: 1;
     justify-content: center;
     margin: 0 20px;
   }
-  .search-container input[type="text"] {
+  .search-container input[type="text"] { /* just for the search box itself */
     padding: 5px;
     border-radius: 20px;
     margin-right: 5px;
-    min-width: 250px;
+    min-width: 300px;
+
   }
-  .search-container button {
+  .search-container button { /* for the magnifying and filter button containers */
     cursor: pointer;
+    background: transparent;
+    border: none;
   }
+
+  .search-container button img {  /* for the magnifying and filter buttons */
+  background-color: transparent;
+
+  }
+
   .header .menu {
     display: flex;
   }

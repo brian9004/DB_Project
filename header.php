@@ -28,11 +28,12 @@
     margin-right: 20px;
   }
 
-  .search-container {
+  .search-container { /* container housing middle section with search, box, and filter) */
     display: flex;
     flex-grow: 1;
     justify-content: center;
     margin: 0 20px;
+
   }
   .search-container input[type="text"] { /* just for the search box itself */
     padding: 5px;
@@ -52,18 +53,26 @@
 
   }
 
-  .header .menu {
+  .header .menu { /* continaer that houses right side buttons */
     display: flex;
+    
   }
-  .header .menu button {
+
+  .header .menu button { /*menu buttons */
     background-color: #0055A4; 
     color: white;
     border: none;
     padding: 10px 20px;
     margin-left: 5px;
     cursor: pointer;
+    border-radius: 12px;
   }
-  .header .menu .signup button {
+
+  .header .menu button:hover { /* hover effect for menu button*/
+    background-color: #003974;
+  }
+
+  .header .menu .signup button { /*signup button only */
     background-color: #3DA9FC; 
     color: white;
     border: none;
@@ -71,6 +80,10 @@
     padding: 10px 40px;
     margin-left: 5px;
     cursor: pointer;
+  }
+
+  .header .menu .signup button:hover { /* hover effect for signup button*/
+  background-color: #2C81BA; 
   }
 </style>
 </head>
@@ -83,7 +96,7 @@
   <span>CATALOG</span>
   <div class="search-container">
     <input type="text" placeholder="Search...">
-    <button type="submit"><img src="images/magnifying_glass.png" alt="Search"></button>
+    <button style=filter:invert(100%) type="submit"><img src="images/magnifying_glass.png" alt="Search"></button>
     <button onclick="toggleFilterView()"><img src="images/filter.png" alt="Search"></button> 
   </div>
   <div class="menu">

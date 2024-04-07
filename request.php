@@ -51,96 +51,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') // GET
   <title>Maintenance Services</title>
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">  
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">  
-  <link rel="stylesheet" href="maintenance-system.css">  
+  <link rel="stylesheet" href="db-project.css">  
 </head>
 
 <body> 
 <div class="container">
   <div class="row g-3 mt-2">
     <div class="col">
-      <h2>Maintenance Request</h2>
+      <h2>All Books</h2>
     </div>  
   </div>
   
   <!---------------->
-
-  <form method="post" action="<?php $_SERVER['PHP_SELF'] ?>" onsubmit="return validateInput()">
-    <table style="width:98%">
-      <tr>
-        <td width="50%">
-          <div class='mb-3'>
-            Requested date:
-            <input type='text' class='form-control' 
-                   id='requestedDate' name='requestedDate' 
-                   placeholder='Format: yyyy-mm-dd' 
-                   pattern="\d{4}-\d{1,2}-\d{1,2}" 
-                   value="<?php if ($request_to_update != null) echo $request_to_update['reqDate'] ?>" />
-          </div>
-        </td>
-        <td>
-          <div class='mb-3'>
-            Room Number:
-            <input type='text' class='form-control' id='roomNo' name='roomNo' 
-            value="<?php if ($request_to_update != null) echo $request_to_update['roomNumber'] ?>" />
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td colspan=2>
-          <div class='mb-3'>
-            Requested by: 
-            <input type='text' class='form-control' id='requestedBy' name='requestedBy'
-                   placeholder='Enter your name'
-                   value="<?php if ($request_to_update != null) echo $request_to_update['reqBy'] ?>" />
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td colspan=2>
-          <div class="mb-3">
-            Description of work/repair:
-            <input type='text' class='form-control' id='requestDesc' name='requestDesc'
-            value="<?php if ($request_to_update != null) echo $request_to_update['repairDesc'] ?>" />
-        </div>
-        </td>
-      </tr>
-      <tr>
-        <td colspan=2>
-          <div class='mb-3'>
-            Requested Priority:
-            <select class='form-select' id='priority_option' name='priority_option'>
-              <option selected></option>
-              <option value='high' <?php if ($request_to_update != null && $request_to_update['reqPriority'] == 'high') echo ' selected="selected"' ?> >
-                High - Must be done within 24 hours</option>
-              <option value='medium' <?php if ($request_to_update != null && $request_to_update['reqPriority'] == 'medium') echo ' selected="selected"' ?> >
-                Medium - Within a week</option>
-              <option value='low' <?php if ($request_to_update != null && $request_to_update['reqPriority'] == 'low') echo ' selected="selected"' ?> >
-                Low - When you get a chance</option>
-            </select>
-          </div>
-        </td>
-      </tr>
-    </table>
-
-    <div class="row g-3 mx-auto">    
-      <div class="col-4 d-grid ">
-      <input type="submit" value="Add" id="addBtn" name="addBtn" class="btn btn-dark" title="Submit a maintenance request" />                  
-      </div>	    
-      <div class="col-4 d-grid ">
-      <input type="submit" value="Confirm update" id="cofmBtn" name="cofmBtn" class="btn btn-primary" title="Update a maintenance request" />
-      <input type="hidden" value="<?= @$_POST['reqId'] ?>" name="cofm_reqId" />
-      <!-- Why need to attach this cofm_reqId? 
-           Because of HTTP stateless property, $_POST['reqId'] is available to this request only. 
-           To carry over the reqId to the next round of form submision, need to pass a token to the next request. 
-      -->                  
-      </div>	    
-      <div class="col-4 d-grid">
-        <input type="button" value="Clear form" name="clearBtn" id="clearBtn" class="btn btn-secondary" onclick="clearForm()" />
-      </div>
-    </div>  
-    <div>
-  </div>  
-</form>
 
 </div>
 
